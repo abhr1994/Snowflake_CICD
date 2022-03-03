@@ -1,0 +1,47 @@
+# Deploy database changes using snowchange
+# https://github.com/Snowflake-Labs/snowchange
+# (see https://aka.ms/yaml for the YAML schema reference)
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - /migrations
+
+variables:
+- group: demo-variables
+stages:
+- stage: DEV
+  variables:
+  - name: DBNAME_POSTFIX
+    value: _DEV
+  jobs:
+  - template: templates/snowflakebuild.yml
+    parameters:
+      jobName: DEV
+      databaseName: $(SF_DATABASE)$(DBNAME_POSTFIX)
+      environmentName: DEV
+
+- stage: QA
+  variables:
+  - name: DBNAME_POSTFIX
+    value: _QA
+  jobs:
+  - template: templates/snowflakebuild.yml
+    parameters:
+      jobName: QA
+      databaseName: $(SF_DATABASE)$(DBNAME_POSTFIX)
+      environmentName: QA
+
+- stage: PROD
+  variables:
+  - name: DBNAME_POSTFIX
+    value: '' # Empty string for PROD
+  jobs:
+  - template: templates/snowflakebuild.yml
+    parameters:
+      jobName: PROD
+      databaseName: $(SF_DATABASE)
+      environmentName: PROD
+

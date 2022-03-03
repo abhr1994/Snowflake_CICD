@@ -1,1 +1,1 @@
-# Snowflake_CICD
+This is the repo for CICD snowflake demo
