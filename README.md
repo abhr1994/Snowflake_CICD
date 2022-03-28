@@ -1,45 +1,46 @@
 # Snowflake CICD using Azure Devops
-                            
+
+![image description](./images/p7.png)
 
  
-# Setup Snowflake
+# Setup Snowflake and Project Creation
 
--- Create Databases and necessary roles if needed
-
-CREATE DATABASE FLYWAY_DEMO COMMENT = 'Azure DevOps deployment test';
-CREATE DATABASE FLYWAY_DEMO_DEV COMMENT = 'Azure DevOps deployment test';
-CREATE DATABASE FLYWAY_DEMO_QA COMMENT = 'Azure DevOps deployment test';
-
-# Project Creation
+![image description](./images/p1.png)
 
 
-Create Repo and add necessary files and folders
+# Create Repo and add necessary files and folders
 
+![image description](./images/p2.png)
 
 Github link: https://github.com/abhr1994/Snowflake_CICD.git
 
 # Create Environments for Deployment and add necessary approvals
 
+![image description](./images/p3.png)
+![image description](./images/p4.png)
+
 
 
 # Create Variable Group
- 
+
+![image description](./images/p5.png)
 
 
 # Result
 
+![image description](./images/p6.png)
 
 
 # References
 
-https://community.snowflake.com/s/article/Snowflake-CI-CD-using-Flyway-and-Azure-DevOps-Pipeline-Part-1
-https://jeremiahhansen.medium.com/building-snowflake-ci-cd-pipelines-with-azure-devops-and-snowchange-c9fe19ea7d67
-https://medium.com/snowflake/building-ci-cd-pipelines-for-data-applications-at-snowflake-702f398ec7c1
+1. https://community.snowflake.com/s/article/Snowflake-CI-CD-using-Flyway-and-Azure-DevOps-Pipeline-Part-1
+2. https://jeremiahhansen.medium.com/building-snowflake-ci-cd-pipelines-with-azure-devops-and-snowchange-c9fe19ea7d67
+3. https://medium.com/snowflake/building-ci-cd-pipelines-for-data-applications-at-snowflake-702f398ec7c1
 
-Notes:
+*Notes:*
 
-Snowflake CICD can also be done using the following combination,
-Sqitch + SnowSQL + jenkins or Github actions
-https://sqitch.org/docs/manual/sqitchtutorial-snowflake/
-https://github.com/sqlfluff/sqlfluff to validate the sql in test phase
-https://pypi.org/project/pylint/ ⇒ Python static code analysis tool which looks for programming errors, helps enforcing a coding standard, sniffs for code smells and offers simple refactoring suggestions.
+1. Snowflake CICD can also be done using the following combination,
+2. Sqitch + SnowSQL + jenkins or Github actions
+3. https://sqitch.org/docs/manual/sqitchtutorial-snowflake/
+4. https://github.com/sqlfluff/sqlfluff to validate the sql in test phase
+5. https://pypi.org/project/pylint/ ⇒ Python static code analysis tool which looks for programming errors, helps enforcing a coding standard, sniffs for code smells and offers simple refactoring suggestions.
